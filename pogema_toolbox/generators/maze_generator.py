@@ -159,6 +159,5 @@ def main():
     generate_and_save_mazes("validation-mazes", range(0, 128))
     generate_and_save_mazes("training-mazes", range(128, 128 + 2048))
 
-
 if __name__ == "__main__":
     main()
