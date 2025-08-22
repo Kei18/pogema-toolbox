@@ -9,4 +9,4 @@ pydantic>=1.8.2
 numpy
 pandas
 PyYAML
-pogema @ git+git@github.com:Kei18/pogema.git
+pogema @ git+https://github.com/kei18/pogema
