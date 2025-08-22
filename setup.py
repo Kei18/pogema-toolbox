@@ -1,6 +1,7 @@
 import codecs
 import os
 import re
+import pathlib
 
 from setuptools import setup, find_packages
 
@@ -28,6 +29,21 @@ def find_version(*file_paths):
 
     raise RuntimeError("Unable to find version string.")
 
+    install_requires=[
+        "gymnasium==0.28.1",
+        "numpy>=1.19.2",
+        "pydantic>=2.0.0",
+    ],
+
+
+def load_requirements(fname="requirements.txt"):
+    lines = pathlib.Path(fname).read_text().splitlines()
+    return [
+        line.strip()
+        for line in lines
+        if line.strip() and not line.startswith("#") and not line.startswith("-")
+    ]
+
 
 setup(
     name='pogema-toolbox',
@@ -38,20 +54,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/Tviskaron/pogema-toolbox',
-    install_requires=[
-        "loguru<=0.7.2",
-        "wandb>=0.12.9",
-        "matplotlib<=3.8.3",
-        "seaborn~=0.13.2",
-        "tabulate>=0.8.7",
-        "importlib-metadata==4.13.0",
-        "dask[distributed]",
-        "pydantic>=1.8.2",
-        "numpy>=1.21",
-        "pandas<=2.2.1",
-        "PyYAML<=6.0.1",
-        "pogema>=1.3.0"
-    ],
+    install_requires=load_requirements(),
     extras_require={
 
     },
