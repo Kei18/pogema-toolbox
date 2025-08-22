@@ -1,5 +1,5 @@
 loguru<=0.7.2
-wandb>=0.12.9,<=0.13.4
+wandb>=0.12.9
 matplotlib<=3.8.3
 seaborn~=0.13.2
 tabulate>=0.8.7,<=0.8.10
